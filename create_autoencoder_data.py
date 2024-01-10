@@ -7,7 +7,6 @@ import pickle
 
 
 from stable_baselines3 import PPO
-from stable_baselines3.common.env_util import make_vec_env
 
 
 # get birds-eye from env
@@ -30,10 +29,10 @@ def render_birds_eye(my_env):
 
 
 # run simulations to build dataset
-def run_simulations(model, env, num_simulations = 1000):
+def run_simulations(model, env, num_simulations = 100):
     data_pairs = []
     for i in range(num_simulations):
-        if i % 50 == 0:
+        if i % 10 == 0:
             print(f'Running simulation {i}...')
         obs = env.reset()[0]
         for t in range(50):
