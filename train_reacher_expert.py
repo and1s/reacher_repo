@@ -1,12 +1,4 @@
-
-import gym
-import numpy as np
-import matplotlib.pyplot as plt
-import cv2
-
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 
 from stable_baselines3 import PPO
 from stable_baselines3.common.env_util import make_vec_env
@@ -18,7 +10,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 print('Making training environment')
 vec_env = make_vec_env("Reacher-v2", n_envs=4)
 
-print(torch.cuda.is_available())
+print('CUDA?: ', torch.cuda.is_available())
 
 print('Training Expert Reacher...')
 
